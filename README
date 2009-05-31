@@ -1,0 +1,26 @@
+= Yahoo Convertr
+
+Currency Conversion API (in Ruby) based on Yahoo Finance US: http://finance.yahoo.com/currency-converter.
+
+== Requirements
+
+Hpricot Gem (http://github.com/why/hpricot/tree/master)
+gem install hpricot --no-rdocs --no-ri
+
+== Install
+
+Clone to /railsapp/vendor/lib
+
+== Example Usage
+
+* Currency Rates for Today:
+
+  @currency_converter = YahooFinance::CurrencyConverter.new
+  @currency_converter.convert(1, "USD", "SGD")
+  @currency_converter.convert(2, "AUD", "SGD")
+
+* Currency Rates for 1st May, 2009:
+
+  @currency_converter = YahooFinance::CurrencyConverter.new(Date.parse("2009-05-01"))
+  @currency_converter.convert(1, "USD", "SGD")
+  @currency_converter.convert(2, "AUD", "SGD")
